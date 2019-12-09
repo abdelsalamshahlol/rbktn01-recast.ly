@@ -1,13 +1,12 @@
 var VideoListEntry = (props) => {
-  const handleClick = function () {
-    console.log(props.video.snippet.title);
-  };
+  const handleCLick = props.handler;
+
   return (<div className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title" onClick={handleClick}>{props.video.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={()=>handleCLick(props.video)}>{props.video.snippet.title}</div>
       <div className="video-list-entry-detail">{props.video.snippet.description}</div>
     </div>
   </div>);
