@@ -1,6 +1,6 @@
 var VideoListEntry = (props) => {
   const handleClick = function () {
-    console.log(props.video.snippet.title);
+    props.handler(props.video);
   };
   return (<div className="video-list-entry media">
     <div className="media-left media-middle">

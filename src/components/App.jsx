@@ -10,18 +10,12 @@ class App extends React.Component {
       videos: exampleVideoData,
       currentVid: exampleVideoData[0]
     };
-    /*
-      setTimeout(()=>{
-        console.log(this)
-        this.setState({
-          currentVid: this.state.videos[1]
-        })
-      },1000)
-    */
   }
 
-  updatePlayer() {
-    alert('called');
+  updatePlayer(video) {
+    this.setState({
+      currentVid: video
+    });
   }
 
   render() {
@@ -33,10 +27,10 @@ class App extends React.Component {
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <VideoPlayer video={this.state.currentVid} state={this.state} />
+          <VideoPlayer video={this.state.currentVid} />
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videos} state={this.state} />
+          <VideoList videos={this.state.videos} handler={this.updatePlayer.bind(this)} />
         </div>
       </div>
     </div>);

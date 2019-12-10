@@ -1,12 +1,10 @@
 import VideoListEntry from './videoListEntry.js';
 
+
 var VideoList = (props) => {
-  console.log(props);
-  // props.state.currentVid = undefined
-  const modifiedVids = props.state.videos.map((video, index)=> <VideoListEntry key={index} video={video}/>);
   return (
     <div className="video-list">
-      {modifiedVids}
+      {props.videos.map((video, index)=> <VideoListEntry key={index} video={video} handler={props.handler}/>)}
     </div>);
 };
 
