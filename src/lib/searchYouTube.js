@@ -9,10 +9,9 @@ var searchYouTube = (options, callback) => {
       part: 'snippet',
       videoEmbeddable: true,
       type: 'video'
-      // forDeveloper: true
     },
     success: (data)=> {
-      console.log(data);
+      // console.log('data from API ' + JSON.stringify(data));
       callback(data.items);
     },
     error: (e)=> {
